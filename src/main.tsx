@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-const root = document.getElementById("root");
+// Ambil root element secara aman
+const rootEl = document.getElementById("root");
+if (!rootEl) throw new Error("Root element not found");
 
-if (!root) throw new Error("Root element not found");
+const root = ReactDOM.createRoot(rootEl);
 
-ReactDOM.createRoot(root).render(
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
